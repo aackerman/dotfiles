@@ -38,9 +38,9 @@ if is_mac?
 end
 
 unless exists_or_link? home + '.vim'
-	FileUtils.mv '.vim', home + '.vim'
+	FileUtils.cp_r '.vim', home + '.vim'
 end
 
 unless exists_or_link? home + 'bin'
-	FileUtils.mv 'bin', home + 'bin'
+	FileUtils.cp_r 'bin', home + 'bin'
 end
