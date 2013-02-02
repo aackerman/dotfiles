@@ -5,5 +5,7 @@
 	"font_face": "Source Code Pro",
 	"font_size": 13.0,
 	"tab_size": 2,
-	"translate_spaces_to_tabs": true
+	"translate_spaces_to_tabs": true,
+	"trim_trailing_white_space_on_save": true,
+	"ensure_newline_at_eof_on_save": true
 }
