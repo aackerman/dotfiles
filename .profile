@@ -11,7 +11,5 @@ unset file
 
 # Load Git BASH completion
 source /usr/share/git-core/git-completion.bash
-
-# Better disk usage stats
-alias dus='du -Psckx * | sort -nr'
+alias dus="ls -lah | awk '{ print $5" "$9 }' | column -t | sort -nr"
 alias slt='open -a "Sublime Text 2" .'
