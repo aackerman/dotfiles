@@ -1,5 +1,5 @@
 # Add `~/bin` to the `$PATH`
-export PATH="$HOME/bin:$PATH"
+export PATH="$HOME/bin:$PATH:$HOME/go-dev/bin"
 export GOPATH="$HOME/go-dev"
 
 # Load the shell dotfiles, and then some:

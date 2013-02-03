@@ -18,6 +18,9 @@ alias gd="git diff"
 alias gdc="git diff --cached"
 alias gs="git status"
 
+alias gz="tar -cxvf"
+alias ungz="tar -zxvf"
+
 # Detect which `ls` flavor is in use
 if ls --color > /dev/null 2>&1; then # GNU `ls`
 	colorflag="--color"
