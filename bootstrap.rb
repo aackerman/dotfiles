@@ -18,7 +18,8 @@ end
 	'.bash_profile',
 	'.profile',
 	'.vimrc',
-	'.bash_prompt'
+	'.bash_prompt',
+	'.gitconfig'
 ].each do | file |
 	homefile = home + file
 	if exists_or_link? homefile
