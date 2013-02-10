@@ -14,6 +14,8 @@ alias p="cd ~/Projects"
 alias www="cd ~/www"
 alias v="vim"
 
+alias vlc='/Applications/VLC.app/Contents/MacOS/VLC'
+
 alias gd="git diff"
 alias gdc="git diff --cached"
 alias gs="git status"
