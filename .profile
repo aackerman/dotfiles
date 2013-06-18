@@ -20,4 +20,4 @@ fi
 
 HISTSIZE=5000
 HISTFILESIZE=5000
-alias vsh='vagrant ssh'
+

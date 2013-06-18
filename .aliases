@@ -9,14 +9,17 @@ alias dt="cd ~/Desktop"
 alias p="cd ~/Projects"
 alias www="cd ~/www"
 alias v="vim"
+alias s="subl ."
 
 alias vlc='/Applications/VLC.app/Contents/MacOS/VLC'
 
+alias g="git"
 alias gd="git diff --color"
 alias gdc="git diff --cached --color"
 alias gs="git status"
 alias gcm="git commit -m"
 alias gpush="git push"
+alias ga="git add"
 
 alias vsh='vagrant ssh'
 
