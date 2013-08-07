@@ -11,15 +11,13 @@ alias www="cd ~/www"
 alias v="vim"
 alias s="subl ."
 
-alias vlc='/Applications/VLC.app/Contents/MacOS/VLC'
-
 alias g="git"
 alias gd="git diff --color"
 alias gdc="git diff --cached --color"
 alias gs="git status"
 alias gcm="git commit -m"
-alias gpush="git push"
 alias ga="git add"
+alias sbp="source ~/.bash_profile && source ~/.profile"
 
 alias vsh='vagrant ssh'
 
@@ -41,9 +39,6 @@ alias lsd='ls -l ${colorflag} | grep "^d"'
 
 # Enable aliases to be sudo’ed
 alias sudo='sudo '
-
-# Gzip-enabled `curl`
-alias gurl="curl --compressed"
 
 # Get OS X Software Updates, and update installed Ruby gems, Homebrew, npm, and their installed packages
 alias update='sudo softwareupdate -i -a; brew update; brew upgrade; npm update npm -g; npm update -g; sudo gem update'

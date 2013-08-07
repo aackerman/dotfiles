@@ -14,8 +14,8 @@ if [ -f /usr/share/git-core/git-completion.bash ]; then
   source /usr/share/git-core/git-completion.bash
 fi
 
-if [ -f ~/.private_bash ]; then
-  source ~/.private_bash
+if [ -f ~/.private ]; then
+  source ~/.private
 fi
 
 HISTSIZE=5000
