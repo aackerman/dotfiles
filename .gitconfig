@@ -1,10 +1,10 @@
 [user]
-	name = Aaron Ackerman
-	email = theron17@gmail.com
+  name = Aaron Ackerman
+  email = theron17@gmail.com
 [alias]
   ci = commit
   co = checkout
-	lola = log --graph --decorate --pretty=oneline --abbrev-commit --all
+  lola = log --graph --decorate --pretty=oneline --abbrev-commit --all
 [color]
   branch = auto
   diff = auto
