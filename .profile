@@ -1,4 +1,4 @@
-export PATH="$HOME/bin:$PATH:$HOME/go-dev/bin"
+export PATH="/usr/local/bin:$PATH:$HOME/bin:$HOME/go-dev/bin:/usr/local/sbin"
 export GOPATH="$HOME/go-dev"
 
 # Load the shell dotfiles, and then some:
