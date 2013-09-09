@@ -1,47 +1,31 @@
 require 'fileutils'
 
-def home
-	Dir.home + '/'
-end
-
 def is_mac?
 	RUBY_PLATFORM.downcase.include?("darwin")
 end
 
-def exists_or_link? (file)
+def exists? (file)
 	File.exists?(file) || File.symlink?(file)
 end
 
 # create symlinks to dotfiles in $HOME
-[
-	'.aliases',
-	'.bash_profile',
-	'.profile',
-	'.vimrc',
-	'.bash_prompt',
-	'.gitconfig'
-].each do | file |
-	homefile = home + file
-	if exists_or_link? homefile
-		FileUtils.rm_f homefile
-	end
-	FileUtils.symlink File.absolute_path(file), homefile
+Dir.glob 'home/*' do | path |
+	dotfile = "." + path.gsub('home/', '')
+	homefile = "#{Dir.home}/#{dotfile}"
+	FileUtils.rm_f homefile if exists? homefile
+	FileUtils.symlink File.absolute_path(path), File.absolute_path(homefile)
 end
 
 # install fonts
 if is_mac?
 	Dir.glob 'fonts/*.otf' do | file |
-		libraryfile = '/Library/' + file
-		unless exists_or_link? libraryfile
+		libraryfile = "/Library/#{file}"
+		unless exists? libraryfile
 			FileUtils.cp file, libraryfile
 		end
 	end
 end
 
-unless exists_or_link? home + '.vim'
-	FileUtils.cp_r '.vim', home + '.vim'
-end
-
-unless exists_or_link? home + 'bin'
-	FileUtils.cp_r 'bin', home + 'bin'
-end
+# Copy vim directory
+FileUtils.rm_f "#{Dir.home}/.vim" if exists? "#{Dir.home}/.vim"
+FileUtils.cp_r '.vim', "#{Dir.home}/.vim"
