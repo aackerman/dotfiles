@@ -1,6 +1,3 @@
-[user]
-  name = Aaron Ackerman
-  email = theron17@gmail.com
 [alias]
   ci = commit
   co = checkout
@@ -8,3 +5,8 @@
 [color]
   branch = auto
   diff = auto
+[core]
+  excludesfile = ~/.gitignore
+[user]
+  name = Aaron Ackerman
+  email = theron17@gmail.com
