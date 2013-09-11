@@ -19,6 +19,7 @@ alias gcm="git commit -m"
 alias ga="git add"
 
 alias sbp="source ~/.bash_profile && source ~/.profile"
+alias pubkey="more ~/.ssh/id_rsa.pub | pbcopy | echo '→ Public key copied to pasteboard.'"
 
 # Detect which `ls` flavor is in use
 if ls --color > /dev/null 2>&1; then # GNU `ls`

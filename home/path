@@ -1,0 +1,1 @@
+export PATH="/usr/local/bin:$PATH:/usr/local/sbin:$HOME/go-dev/bin:$HOME/bin"
