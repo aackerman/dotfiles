@@ -7,6 +7,8 @@
 [color]
   branch = auto
   diff = auto
+[push]
+  default = current
 [core]
   excludesfile = ~/.gitignore
 [user]
