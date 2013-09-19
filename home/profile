@@ -6,10 +6,18 @@ for file in ~/.{path,prompt,exports,aliases,functions,extra,private}; do
 done
 unset file
 
-# Load Git BASH completion
+# Load Git BASH completion installed with homebrew
 if [ -f /usr/share/git-core/git-completion.bash ]; then
   source /usr/share/git-core/git-completion.bash
 fi
+
+# Load Git BASH completion added to home directory
+if [ -f ~/git-completion.bash ]; then
+  source ~/git-completion.bash
+fi
+
+# Fix BASH completion to work with 'g' alias
+complete -o bashdefault -o default -o nospace -F _git g 2>/dev/null || complete -o default -o nospace -F _git g
 
 # source home install of RVM
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
