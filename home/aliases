@@ -17,6 +17,8 @@ alias gdc="git diff --cached --color"
 alias gs="git status"
 alias gcm="git commit -m"
 alias ga="git add"
+alias gpush="git push"
+alias gpull="git pull"
 
 alias sbp="source ~/.profile"
 alias pubkey="more ~/.ssh/id_rsa.pub | pbcopy | echo '→ Public key copied to pasteboard.'"
