@@ -40,7 +40,7 @@ alias la="ls -la ${colorflag}"
 alias sudo='sudo '
 
 # Flush Directory Service cache
-alias flush="dscacheutil -flushcache && killall -HUP mDNSResponder;echo 'flush_all' | nc localhost 11211;"
+alias flush="dscacheutil -flushcache && killall -HUP mDNSResponder;echo 'flush_all' | nc localhost 11211; if hash redis-cli 2>/dev/null; then echo 'FLUSHALL' | redis-cli; fi"
 
 # Trim new lines and copy to clipboard
 alias c="tr -d '\n' | pbcopy"
