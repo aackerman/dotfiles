@@ -1,0 +1,12 @@
+function flush() {
+  # Flush Directory Service cache
+  dscacheutil -flushcache;
+  # Flush DNS
+  killall -HUP mDNSResponder 2>/dev/null;
+  # Flush Memcached
+  echo 'flush_all' | nc localhost 11211;
+  # Flush redis
+  if hash redis-cli 2>/dev/null; then
+    echo 'FLUSHALL' | redis-cli
+  fi
+}
