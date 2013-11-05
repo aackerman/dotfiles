@@ -11,9 +11,9 @@
   "trim_trailing_white_space_on_save": true,
   "color_scheme": "Packages/Color Scheme - Default/Solarized (Dark).tmTheme",
   "folder_exclude_patterns": [
-		".git",
-		"log",
-		"tmp",
-		"node_modules"
-	]
+    ".git",
+    "log",
+    "tmp",
+    "node_modules"
+  ]
 }
