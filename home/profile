@@ -7,13 +7,8 @@ done
 unset file
 
 # Load Git BASH completion installed with homebrew
-if [ -f /usr/share/git-core/git-completion.bash ]; then
-  source /usr/share/git-core/git-completion.bash
-fi
-
-# Load Git BASH completion added to home directory
-if [ -f ~/git-completion.bash ]; then
-  source ~/git-completion.bash
+if [ -f /usr/local/etc/bash_completion.d/git-completion.bash ]; then
+  source /usr/local/etc/bash_completion.d/git-completion.bash
 fi
 
 # Fix BASH completion to work with 'g' alias
