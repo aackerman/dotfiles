@@ -42,8 +42,5 @@ alias la="ls -la ${colorflag}"
 # Enable aliases to be sudo’ed
 alias sudo='sudo '
 
-# Trim new lines and copy to clipboard
-alias c="tr -d '\n' | pbcopy"
-
 # Recursively delete `.DS_Store` files
 alias cleanup="find . -type f -name '*.DS_Store' -ls -delete"
