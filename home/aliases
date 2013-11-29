@@ -24,6 +24,7 @@ alias gpush="git push"
 alias gpull="git pull"
 
 alias sbp="source ~/.profile"
+alias psg="ps aux | grep "
 alias pubkey="more ~/.ssh/id_rsa.pub | pbcopy | echo '→ Public key copied to pasteboard.'"
 
 # Detect which `ls` flavor is in use
