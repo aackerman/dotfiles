@@ -1,0 +1,21 @@
+update
+
+upgrade
+
+install bash
+install ack
+install git
+install redis
+install memcached
+install node
+install imagemagick
+install ffmpeg
+install nginx
+install readline
+install tree
+install tmux
+install postgresql
+
+tap homebrew/versions
+
+cleanup

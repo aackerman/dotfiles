@@ -9,11 +9,17 @@ def exists? (file)
 end
 
 # create symlinks to dotfiles in $HOME
-Dir.glob 'home/*' do | path |
-	dotfile = "." + path.gsub('home/', '')
+Dir.glob('home/*', File::FNM_DOTMATCH).tap { |a|
+	a.shift(2)
+}.each do | path |
+	dotfile = path.gsub('home/', '')
 	homefile = "#{Dir.home}/#{dotfile}"
-	FileUtils.rm_f homefile if exists? homefile
-	FileUtils.symlink File.absolute_path(path), File.absolute_path(homefile)
+	if exists? homefile
+		FileUtils.rm_f homefile
+		puts "#{homefile} deleted"
+	end
+	FileUtils.ln_sf File.absolute_path(path), File.absolute_path(homefile)
+	puts "linked #{File.absolute_path(path)} -> #{File.absolute_path(homefile)}"
 end
 
 # install fonts
