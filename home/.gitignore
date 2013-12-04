@@ -1,8 +1,7 @@
 .DS_Store
 .cache
-tmp
+tmp/*
 *.log
-*.sw?
 .Spotlight-V100
 node_modules
 npm-debug.log
