@@ -10,14 +10,18 @@ end
 
 # create symlinks to dotfiles in $HOME
 Dir.glob('home/*', File::FNM_DOTMATCH).tap { |a|
-  a.shift(2)
+  a.shift(2) # tap and shift off . and .. references
 }.each do | path |
   dotfile = path.gsub('home/', '')
   homefile = "#{Dir.home}/#{dotfile}"
+
+  # remove the current file if it exists
   if exists? homefile
     FileUtils.rm_f homefile
     puts "#{homefile} deleted"
   end
+
+  # symlink the file checked in git to the home path
   FileUtils.ln_sf File.absolute_path(path), File.absolute_path(homefile)
   puts "linked #{File.absolute_path(path)} -> #{File.absolute_path(homefile)}"
 end
