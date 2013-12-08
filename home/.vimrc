@@ -50,10 +50,6 @@ set expandtab
 filetype plugin on
 filetype indent on
 
-" Display tabs and trailing spaces visually
-"set list listchars=tab:\ \ ,trail:·
-"set list listchars=trail:·
-
 set nowrap       "Don't wrap lines
 set linebreak    "Wrap lines at convenient points
 
@@ -78,14 +74,11 @@ set wildignore+=log/**
 set wildignore+=tmp/**
 set wildignore+=*.png,*.jpg,*.gif
 
-"
-
 " ================ Scrolling ========================
 
 set scrolloff=8         "Start scrolling when we're 8 lines away from margins
 set sidescrolloff=15
 set sidescroll=1
-
 
 " =============== Personal Customizations ================
 colors monokai
@@ -96,45 +89,3 @@ set ff=unix
 map <c-j> <c-w>j<c-w>_
 map <c-k> <c-w>k<c-w>_
 set winminheight=0
-
-" Amendment to the window-switching tip above.  This allows them
-" to be hidden out of sight for more real estate.
-set hidden
-
-" Begin switch mode code: handle either buffer or window c-j/c-k switches
-function MapForBuffers()
-	noremap <c-j> :only<cr>:bnext<cr>
-	inoremap <c-j> <esc>:only<cr>:bnext<cr>
-	noremap <c-k> :only<cr>:bprev<cr>
-	inoremap <c-k> <esc>:only<cr>:bprev<cr>
-	:only
-endfunction
-
-function MapForWindows()
-	:unhide
-	noremap <c-j> <c-w>j<c-w>_
-	inoremap <c-j> <esc><c-w>j<c-w>_
-	noremap <c-k> <c-w>k<c-w>_
-	inoremap <c-k> <esc><c-w>k<c-w>_
-endfunction
-
-function MapSwitchMode()
-	if g:switchmode == "windows"
-		call MapForWindows()
-	else
-		call MapForBuffers()
-	endif
-endfunction
-
-let g:switchmode = "windows"
-call MapSwitchMode()
-
-function ToggleSwitchMode()
-	if g:switchmode == "windows"
-		let g:switchmode = "buffers"
-	else
-		let g:switchmode = "windows"
-	endif
-	call MapSwitchMode()
-
-endfunction
