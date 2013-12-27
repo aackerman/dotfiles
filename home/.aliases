@@ -24,6 +24,7 @@ alias gpush="git push"
 alias gpull="git pull"
 
 alias k="kill -9 "
+alias bx="bundle exec"
 alias sbp="source ~/.profile"
 alias psg="ps aux | grep "
 alias pubkey="more ~/.ssh/id_rsa.pub | pbcopy | echo '→ Public key copied to pasteboard.'"
