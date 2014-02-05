@@ -23,11 +23,12 @@ alias grh="git reset --hard head"
 alias gpush="git push"
 alias gpull="git pull"
 
-alias k="kill -9 "
+alias k="kill -s SIGTERM "
 alias bx="bundle exec"
 alias sbp="source ~/.profile"
 alias psg="ps aux | grep "
 alias pubkey="more ~/.ssh/id_rsa.pub | pbcopy | echo '→ Public key copied to pasteboard.'"
+alias vsh="vagrant ssh"
 
 # Detect which `ls` flavor is in use
 if ls --color > /dev/null 2>&1; then # GNU `ls`
