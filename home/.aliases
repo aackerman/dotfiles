@@ -23,7 +23,7 @@ alias grh="git reset --hard head"
 alias gpush="git push"
 alias gpull="git pull"
 
-alias k="kill -s SIGTERM "
+alias k="kill -TERM "
 alias bx="bundle exec"
 alias sbp="source ~/.profile"
 alias psg="ps aux | grep "
