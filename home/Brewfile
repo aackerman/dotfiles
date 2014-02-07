@@ -14,6 +14,7 @@ install nginx
 install readline
 install tree
 install tmux
+install elasticsearch
 install postgresql
 
 tap homebrew/versions
