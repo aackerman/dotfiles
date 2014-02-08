@@ -81,7 +81,6 @@ set sidescrolloff=15
 set sidescroll=1
 
 " =============== Personal Customizations ================
-colors monokai
 set ff=unix
 
 " Allow for split window expand / collapse using CTRL-j / CTRL-k.  Useful for
