@@ -1,6 +1,7 @@
 [alias]
   ci = commit
   co = checkout
+  psuh = push
   undo = reset --soft HEAD^
   amend = commit --amend -C HEAD
   lola = log --graph --decorate --pretty=oneline --abbrev-commit --all
