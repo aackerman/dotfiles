@@ -24,6 +24,7 @@ alias gpush="git push"
 alias gpull="git pull"
 
 alias k="kill -TERM "
+alias gt="go test -v"
 alias bx="bundle exec"
 alias sbp="source ~/.profile"
 alias psg="ps aux | grep "
