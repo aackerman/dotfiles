@@ -27,7 +27,6 @@ alias k="kill -TERM "
 alias gt="go test -v"
 alias bx="bundle exec"
 alias sbp="source ~/.profile"
-alias psg="ps aux | grep "
 alias pubkey="more ~/.ssh/id_rsa.pub | pbcopy | echo '→ Public key copied to pasteboard.'"
 alias vsh="vagrant ssh"
 
