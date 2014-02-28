@@ -4,6 +4,8 @@
   psuh = push
   phus = push
   puhs = push
+  pus  = push
+  pul  = pull
   undo = reset --soft HEAD^
   amend = commit --amend -C HEAD
   lola = log --graph --decorate --pretty=oneline --abbrev-commit --all
