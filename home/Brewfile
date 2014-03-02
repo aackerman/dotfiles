@@ -6,6 +6,7 @@ install bash
 install ack
 install git
 install htop
+install rbenv
 install redis
 install memcached
 install node
