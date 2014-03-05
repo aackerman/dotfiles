@@ -1,41 +1,59 @@
 require 'fileutils'
 
-def is_mac?
-  RUBY_PLATFORM.downcase.include?("darwin")
-end
+class Bootstrap
+  class << self
+    def osx?
+      RUBY_PLATFORM.downcase.include?("darwin")
+    end
 
-def exists? (file)
-  File.exists?(file) || File.symlink?(file)
-end
+    def file_exists? (file)
+      File.exists?(file) || File.symlink?(file)
+    end
 
-# create symlinks to dotfiles in $HOME
-Dir.glob('home/*', File::FNM_DOTMATCH).tap { |a|
-  a.shift(2) # tap and shift off . and .. references
-}.each do | path |
-  dotfile = path.gsub('home/', '')
-  homefile = "#{Dir.home}/#{dotfile}"
+    def dotfiles
+      Dir.glob('home/*', File::FNM_DOTMATCH).tap { |a| a.shift(2) }
+    end
 
-  # remove the current file if it exists
-  if exists? homefile
-    FileUtils.rm_f homefile
-    puts "#{homefile} deleted"
-  end
+    def symlink_dotfiles!
+      dotfiles.each do | path |
+        dotfile = path.gsub('home/', '')
+        homefile = "#{Dir.home}/#{dotfile}"
 
-  # symlink the file checked in git to the home path
-  FileUtils.ln_sf File.absolute_path(path), File.absolute_path(homefile)
-  puts "linked #{File.absolute_path(path)} -> #{File.absolute_path(homefile)}"
-end
+        # remove the current file if it exists
+        if file_exists? homefile
+          FileUtils.rm_f homefile
+        end
 
-# install fonts
-if is_mac?
-  Dir.glob 'fonts/*.otf' do | file |
-    libraryfile = "/Library/#{file}"
-    unless exists? libraryfile
-      FileUtils.cp file, libraryfile
+        # symlink the file checked in git to the home path
+        FileUtils.ln_sf File.absolute_path(path), File.absolute_path(homefile)
+        puts "linked #{File.basename(path)} -> #{File.absolute_path(homefile)}"
+      end
+    end
+
+    def install_fonts!
+      if osx?
+        Dir.glob 'fonts/*.otf' do | file |
+          libraryfile = "/Library/#{file}"
+          unless file_exists? libraryfile
+            FileUtils.cp file, libraryfile
+          end
+        end
+      end
+    end
+
+    def symlink_vim_directory!
+      vim_home = "#{Dir.home}/.vim"
+      FileUtils.rm_f vim_home if file_exists? vim_home
+      puts "linked #{File.absolute_path('.vim')} -> #{vim_home}"
+      FileUtils.ln_sf File.absolute_path('.vim'), vim_home
+    end
+
+    def run!
+      symlink_dotfiles!
+      symlink_vim_directory!
+      install_fonts!
     end
   end
 end
 
-# Copy vim directory
-FileUtils.rm_f "#{Dir.home}/.vim" if exists? "#{Dir.home}/.vim"
-FileUtils.cp_r '.vim', "#{Dir.home}/.vim"
+Bootstrap.run!
