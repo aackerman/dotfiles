@@ -16,17 +16,15 @@ class Bootstrap
 
     def symlink_dotfiles!
       dotfiles.each do | path |
-        dotfile = path.gsub('home/', '')
+        dotfile = File.basename(path)
         homefile = "#{Dir.home}/#{dotfile}"
 
         # remove the current file if it exists
-        if file_exists? homefile
-          FileUtils.rm_f homefile
-        end
+        FileUtils.rm_f homefile if file_exists? homefile
 
         # symlink the file checked in git to the home path
         FileUtils.ln_sf File.absolute_path(path), File.absolute_path(homefile)
-        puts "linked #{File.basename(path)} -> #{File.absolute_path(homefile)}"
+        print_link File.basename(path), File.absolute_path(homefile)
       end
     end
 
@@ -44,8 +42,12 @@ class Bootstrap
     def symlink_vim_directory!
       vim_home = "#{Dir.home}/.vim"
       FileUtils.rm_f vim_home if file_exists? vim_home
-      puts "linked #{File.absolute_path('.vim')} -> #{vim_home}"
       FileUtils.ln_sf File.absolute_path('.vim'), vim_home
+      print_link File.basename('.vim'), vim_home
+    end
+
+    def print_link(src, dest)
+      printf "%10s -> %s\n", src, dest
     end
 
     def run!
