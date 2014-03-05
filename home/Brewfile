@@ -5,6 +5,10 @@ upgrade
 install bash
 install ack
 install git
+install htop
+install mercurial
+install ruby-build
+install rbenv
 install redis
 install memcached
 install node
