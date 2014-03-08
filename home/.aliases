@@ -25,7 +25,6 @@ alias gpull="git pull"
 
 alias k="kill -TERM "
 alias bx="bundle exec"
-alias rails="bx rails"
 alias rake="bx rake"
 alias rspec="bx rspec"
 alias sbp="source ~/.profile"
