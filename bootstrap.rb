@@ -43,16 +43,27 @@ class Bootstrap
       vim_home = "#{Dir.home}/.vim"
       FileUtils.rm_f vim_home if file_exists? vim_home
       FileUtils.ln_sf File.absolute_path('.vim'), vim_home
-      print_link File.basename('.vim'), vim_home
+      print_link '.vim', vim_home
     end
 
     def print_link(src, dest)
-      printf "%10s -> %s\n", src, dest
+      printf "%27s -> %s\n", src, dest.gsub!('/Users/aackerman', '~')
+    end
+
+    def copy_iterm_profile!
+      iterm_prefs = "com.googlecode.iterm2.plist"
+      home_path = "#{Dir.home}/Library/Preferences/#{iterm_prefs}"
+      local_path = "terminal/#{iterm_prefs}"
+
+      FileUtils.rm_f home_path
+      FileUtils.cp local_path, home_path
+      print_link iterm_prefs, home_path
     end
 
     def run!
       symlink_dotfiles!
       symlink_vim_directory!
+      copy_iterm_profile!
       install_fonts!
     end
   end
