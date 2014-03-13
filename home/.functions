@@ -33,3 +33,13 @@ function tab-color {
     yellow) __set-color 240 240   0;;
   esac
 }
+
+function tab {
+  osascript &>/dev/null <<EOF
+    tell application "iTerm"
+      tell current terminal
+        launch session "Default Session"
+      end tell
+    end tell
+EOF
+}
