@@ -1,4 +1,4 @@
-function flush() {
+function flush {
   # Flush Directory Service cache
   dscacheutil -flushcache;
   # Flush DNS
@@ -9,4 +9,27 @@ function flush() {
   if hash redis-cli 2>/dev/null; then
     echo 'FLUSHALL' | redis-cli
   fi
+}
+
+function title {
+  # set iterm tab title
+  echo -e -n "\033];$@\007"
+}
+
+function __set-color {
+  # iterm proprietary escape sequences for setting colors
+  echo -n -e "\033]6;1;bg;red;brightness;$1\a"
+  echo -n -e "\033]6;1;bg;green;brightness;$2\a"
+  echo -n -e "\033]6;1;bg;blue;brightness;$3\a"
+}
+
+function tab-color {
+  # set some nice tab colors
+  case "$1" in
+    red)    __set-color 195  89  76;;
+    orange) __set-color 219 154  88;;
+    green)  __set-color  65 174  76;;
+    blue)   __set-color  92 155 204;;
+    yellow) __set-color 240 240   0;;
+  esac
 }
