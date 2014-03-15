@@ -35,6 +35,7 @@ function tab-color {
 }
 
 function tab {
+  if hash osascript 2>/dev/null; then
   osascript &>/dev/null <<EOF
     tell application "iTerm"
       tell current terminal
@@ -42,4 +43,5 @@ function tab {
       end tell
     end tell
 EOF
+  fi
 }
