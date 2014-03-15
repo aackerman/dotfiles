@@ -5,6 +5,7 @@
   phus = push
   puhs = push
   pus  = push
+  psh  = push
   pul  = pull
   back = reset --soft HEAD^
   undo = reset --soft HEAD^
