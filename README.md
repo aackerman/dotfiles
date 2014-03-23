@@ -2,7 +2,7 @@
 
 ## Installation
 
-```ruby
+```sh
 $ ruby bootstrap.rb
 ```
 
