@@ -15,7 +15,7 @@
   branch = auto
   diff = auto
 [push]
-  default = current
+  default = simple
 [core]
   excludesfile = ~/.gitignore
 [user]
