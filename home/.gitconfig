@@ -8,6 +8,7 @@
   psh  = push
   phs  = push
   pul  = pull
+  yolo = push --force
   back = reset --soft HEAD^
   undo = reset --soft HEAD^
   amend = commit --amend -C HEAD
