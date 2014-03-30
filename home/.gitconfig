@@ -14,12 +14,16 @@
   amend = commit --amend -C HEAD
   lola = log --graph --decorate --pretty=oneline --abbrev-commit --all
 [color]
-  branch = auto
-  diff = auto
+  ui = true
+  branch = true
+  diff = true
 [push]
   default = current
 [core]
+  autocrlf = true
   excludesfile = ~/.gitignore
 [user]
   name = Aaron Ackerman
   email = theron17@gmail.com
+[help]
+  autocorrect = true
