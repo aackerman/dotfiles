@@ -20,7 +20,6 @@
 [push]
   default = current
 [core]
-  autocrlf = true
   excludesfile = ~/.gitignore
 [user]
   name = Aaron Ackerman
