@@ -23,6 +23,7 @@ alias gpush="git push"
 alias gpull="git pull"
 
 alias k="kill -TERM "
+alias o="open ."
 alias bx="bundle exec"
 alias bndle="bundle"
 alias rake="bx rake"
