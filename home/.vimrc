@@ -1,13 +1,5 @@
 set nocompatible
 
-" =============== Pathogen Initialization ===============
-" This loads all the plugins in ~/.vim/bundle
-" Use tpope's pathogen plugin to manage all other plugins
-
-  runtime bundle/tpope-vim-pathogen/autoload/pathogen.vim
-  call pathogen#infect()
-  call pathogen#helptags()
-
 " ================ General Config ====================
 
 set backspace=indent,eol,start  "Allow backspace in insert mode
@@ -83,8 +75,4 @@ set sidescroll=1
 " =============== Personal Customizations ================
 set ff=unix
 
-" Allow for split window expand / collapse using CTRL-j / CTRL-k.  Useful for
-" editing many files in one window, switching back and forth.
-map <c-j> <c-w>j<c-w>_
-map <c-k> <c-w>k<c-w>_
 set winminheight=0
