@@ -6,6 +6,15 @@ for file in ~/.{path,prompt,exports,aliases,functions,extra,private}; do
 done
 unset file
 
+# Case-insensitive globbing (used in pathname expansion)
+shopt -s nocaseglob
+
+# Append to the Bash history file, rather than overwriting it
+shopt -s histappend
+
+# Autocorrect typos in path names when using `cd`
+shopt -s cdspell
+
 # Load Git BASH completion installed with homebrew
 if [ -f /usr/local/etc/bash_completion.d/git-completion.bash ]; then
   source /usr/local/etc/bash_completion.d/git-completion.bash
