@@ -48,7 +48,7 @@ class Bootstrap
     end
 
     def print_link(src, dest)
-      printf "%27s -> %s\n", src, dest.gsub!('/Users/aackerman', '~')
+      printf " %15s -> %s\n", src, dest.gsub!('/Users/aackerman', '~')
     end
 
     def copy_iterm_profile!
