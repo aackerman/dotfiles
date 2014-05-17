@@ -1,7 +1,9 @@
-export GOPATH="$HOME/go-dev"
+export GOPATH="$HOME"
+export CDPATH=.:~:~/src
 export EDITOR='subl -w'
 export HISTSIZE=100000
 export HISTFILESIZE=100000
+export PATH="/usr/local/bin:$PATH:/usr/local/sbin:$HOME/bin"
 
 # Ruby GC Exports
 export RUBY_GC_MALLOC_LIMIT=64000000

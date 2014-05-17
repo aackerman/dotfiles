@@ -4,6 +4,7 @@ vendor/bundle
 .cache
 tmp/*
 *.log
+TODO.md
 .Spotlight-V100
 node_modules
 npm-debug.log
