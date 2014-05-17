@@ -6,7 +6,6 @@ alias .....="cd ../../../.."
 # Shortcuts
 alias dl="cd ~/Downloads"
 alias dt="cd ~/Desktop"
-alias www="cd ~/www"
 alias v="vim"
 alias s="subl ."
 
