@@ -2,6 +2,7 @@
   ci = commit
   co = checkout
   psuh = push
+  pussh = push
   phus = push
   puhs = push
   pus  = push
