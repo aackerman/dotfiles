@@ -1,8 +1,8 @@
 export GOPATH="$HOME"
 export CDPATH=.:~:~/src
 export EDITOR='subl -w'
-export HISTSIZE=100000
-export HISTFILESIZE=100000
+export HISTSIZE=1000000
+export HISTFILESIZE=1000000
 export PATH="/usr/local/bin:$PATH:/usr/local/sbin:$HOME/bin"
 
 # Ruby GC Exports
