@@ -40,13 +40,6 @@ class Bootstrap
       end
     end
 
-    def symlink_vim_directory!
-      vim_home = "#{Dir.home}/.vim"
-      FileUtils.rm_f vim_home if file_exists? vim_home
-      FileUtils.ln_sf File.absolute_path('.vim'), vim_home
-      print_link '.vim', vim_home
-    end
-
     def print_link(src, dest)
       printf " %15s -> %s\n", src, dest.gsub!('/Users/aackerman', '~')
     end
@@ -72,7 +65,6 @@ class Bootstrap
     def run!
       symlink_dotfiles!
       symlink_sublime_settings!
-      symlink_vim_directory!
       copy_iterm_profile!
       install_fonts!
     end
