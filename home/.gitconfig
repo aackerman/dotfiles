@@ -8,6 +8,7 @@
   pus  = push
   psh  = push
   phs  = push
+  poush = push
   pul  = pull
   yolo = push --force
   back = reset --soft HEAD^
