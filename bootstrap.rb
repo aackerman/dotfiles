@@ -12,7 +12,17 @@ class Bootstrap
     end
 
     def dotfiles
-      Dir.glob('home/*', File::FNM_DOTMATCH).tap { |a| a.shift(2) }
+      Dir.glob('home/*', File::FNM_DOTMATCH).tap{|arry|
+        arry.shift(2)
+      }.reject{|item|
+        # reject file if the host is not osx
+        # and the file is specific to osx
+        !osx? && osx_dotfiles.include?(item)
+      }
+    end
+
+    def osx_dotfiles
+      ['.osx', 'Brewfile']
     end
 
     def symlink_dotfiles!
@@ -64,9 +74,12 @@ class Bootstrap
 
     def run!
       symlink_dotfiles!
-      symlink_sublime_settings!
-      copy_iterm_profile!
-      install_fonts!
+
+      if osx?
+        symlink_sublime_settings!
+        copy_iterm_profile!
+        install_fonts!
+      end
     end
   end
 end
