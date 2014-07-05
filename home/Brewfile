@@ -6,7 +6,6 @@ install bash
 install ack
 install git
 install htop
-install mercurial
 install ruby-build
 install rbenv
 install redis
@@ -16,9 +15,7 @@ install imagemagick
 install ffmpeg
 install nginx
 install readline
-install tree
 install tmux
-install elasticsearch
 install postgresql
 
 tap homebrew/versions
