@@ -1,32 +1,32 @@
-alias ..="cd .."
-alias ...="cd ../.."
-alias ....="cd ../../.."
-alias .....="cd ../../../.."
+alias ..='cd ..'
+alias ...='cd ../..'
+alias ....='cd ../../..'
+alias .....='cd ../../../..'
 
 # Shortcuts
-alias dl="cd ~/Downloads"
-alias dt="cd ~/Desktop"
-alias v="vim"
-alias s="subl ."
+alias dl='cd ~/Downloads'
+alias dt='cd ~/Desktop'
+alias v='vim'
+alias s='subl .'
 
 # Git aliases
-alias g="git"
-alias gd="git diff --color"
-alias gdc="git diff --cached --color"
-alias gs="git status"
-alias gcm="git commit -m"
-alias gau="git add -u"
-alias ga="git add"
-alias grh="git reset --hard head"
-alias gpush="git push"
-alias gpull="git pull"
+alias g='git'
+alias gd='git diff --color'
+alias gdc='git diff --cached --color'
+alias gs='git status'
+alias gcm='git commit -m'
+alias gau='git add -u'
+alias ga='git add'
+alias grh='git reset --hard head'
+alias gpush='git push'
+alias gpull='git pull'
 
-alias k="kill -TERM "
-alias o="open ."
-alias bx="bundle exec"
-alias sbp="source ~/.profile"
+alias k='kill -TERM '
+alias o='open .'
+alias bx='bundle exec'
+alias sbp='source ~/.profile'
 alias pubkey="more ~/.ssh/id_rsa.pub | pbcopy | echo '→ Public key copied to pasteboard.'"
-alias vsh="vagrant ssh"
+alias vsh='vagrant ssh'
 
 # Detect which `ls` flavor is in use
 if ls --color > /dev/null 2>&1; then # GNU `ls`
