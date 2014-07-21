@@ -11,11 +11,8 @@ install rbenv
 install redis
 install memcached
 install node
-install imagemagick
-install ffmpeg
 install nginx
 install readline
-install tmux
 install postgresql
 
 tap homebrew/versions
