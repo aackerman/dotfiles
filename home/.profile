@@ -26,4 +26,5 @@ fi
 # Fix BASH completion to work with 'g' alias
 complete -o bashdefault -o default -o nospace -F _git g 2>/dev/null || complete -o default -o nospace -F _git g
 
+# initialize rbenv
 eval "$(rbenv init -)"
