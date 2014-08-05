@@ -12,7 +12,7 @@ function flush {
 }
 
 function timestamp {
-  date +"%T"
+  date +%s
 }
 
 function title {
