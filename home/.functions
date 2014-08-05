@@ -11,6 +11,10 @@ function flush {
   fi
 }
 
+function timestamp {
+  date +"%T"
+}
+
 function title {
   # set iterm tab title
   echo -e -n "\033];$@\007"
