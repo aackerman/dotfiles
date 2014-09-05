@@ -10,7 +10,10 @@
   phs  = push
   poush = push
   pul  = pull
-  unstage = reset head
+  sl = stash list
+  sa = stash apply
+  br = branch
+  unstage = "!f() { git reset head $1 && git checkout "$1" }; f"
   yolo = push --force
   back = reset --soft HEAD^
   undo = reset --soft HEAD^
