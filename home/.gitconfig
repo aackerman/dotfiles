@@ -13,7 +13,7 @@
   sl = stash list
   sa = stash apply
   br = branch
-  unstage = "!f() { git reset head $1 && git checkout "$1" }; f"
+  unstage = reset head
   yolo = push --force
   back = reset --soft HEAD^
   undo = reset --soft HEAD^
