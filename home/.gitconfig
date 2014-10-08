@@ -9,7 +9,12 @@
   psh  = push
   phs  = push
   poush = push
+  spuh = push
   pul  = pull
+  sl = stash list
+  sa = stash apply
+  br = branch
+  unstage = reset head
   yolo = push --force
   back = reset --soft HEAD^
   undo = reset --soft HEAD^
