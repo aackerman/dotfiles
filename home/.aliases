@@ -26,6 +26,7 @@ alias k='kill -TERM '
 alias src='cd ~/src'
 alias o='open .'
 alias bx='bundle exec'
+alias prep='rake db:test:prepare'
 alias sbp='source ~/.profile'
 alias pubkey="more ~/.ssh/id_rsa.pub | pbcopy | echo '→ Public key copied to pasteboard.'"
 alias vsh='vagrant ssh'

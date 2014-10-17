@@ -10,6 +10,7 @@
   phs  = push
   poush = push
   spuh = push
+  puzh = push
   pul  = pull
   sl = stash list
   sa = stash apply
