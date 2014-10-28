@@ -3,7 +3,6 @@ export CDPATH=.:~:~/src
 export EDITOR='subl -w'
 export HISTSIZE=1000000
 export HISTFILESIZE=1000000
-export PATH="$HOME/bin:$PATH"
 
 # Ruby GC Exports
 export RUBY_GC_MALLOC_LIMIT=64000000

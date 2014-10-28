@@ -23,6 +23,8 @@ alias gpush='git push'
 alias gpull='git pull'
 
 alias k='kill -TERM '
+alias df='df -h'
+alias du='du -h -c'
 alias src='cd ~/src'
 alias o='open .'
 alias bx='bundle exec'
@@ -30,6 +32,7 @@ alias prep='rake db:test:prepare'
 alias sbp='source ~/.profile'
 alias pubkey="more ~/.ssh/id_rsa.pub | pbcopy | echo '→ Public key copied to pasteboard.'"
 alias vsh='vagrant ssh'
+alias fix-filenames='for f in *; do mv "$f" "`echo $f | sed s/\?.*//`"; done'
 
 # Detect which `ls` flavor is in use
 if ls --color > /dev/null 2>&1; then # GNU `ls`
