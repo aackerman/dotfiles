@@ -47,5 +47,13 @@ func symlinkDotfiles() {
 	}
 }
 
+func installFonts() {
+
+}
+
 func main() {
+	symlinkDotfiles()
+	if isOSX() {
+		installFonts()
+	}
 }
