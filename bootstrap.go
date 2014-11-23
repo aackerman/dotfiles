@@ -19,6 +19,12 @@ func fileExists(fname string) bool {
 	return false
 }
 
+func installFonts() {
+	if isOSX() {
+		files, err := filepath.Glob("fonts/*.otf")
+	}
+}
+
 func symlinkDotfiles() {
 	osxfiles := []map[string]struct{}{
 		".osx":     struct{}{},
