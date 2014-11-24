@@ -22,6 +22,12 @@ func fileExists(fname string) bool {
 func installFonts() {
 	if isOSX() {
 		files, err := filepath.Glob("fonts/*.otf")
+		if err != nil {
+			fmt.Fatalf(err)
+		}
+		if files == nil {
+			return
+		}
 	}
 }
 
