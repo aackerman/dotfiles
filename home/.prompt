@@ -48,4 +48,13 @@ function parse_git_branch() {
 }
 
 export PS1="\[${BOLD}${MAGENTA}\]\u\[$RESET\] in \[$GREEN\]\w\[$RESET\]\$([[ -n \$(git branch 2> /dev/null) ]] && echo \" on \")\[$PURPLE\]\$(parse_git_branch)\[$RESET\]\n\[$GREEN\]❯ \[$RESET\]"
+
+ZSH_THEME_GIT_PROMPT_PREFIX="on ${PURPLE}"
+ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%} "
+ZSH_THEME_GIT_PROMPT_CLEAN=""
+RPROMPT=""
+
+export PROMPT='%B${MAGENTA}%n%{$reset_color%}%b in ${GREEN}%~%{$reset_color%} $(git_prompt_info)
+${GREEN}❯%{$reset_color%} '
+
 export PS2="\[$ORANGE\]→ \[$RESET\]"

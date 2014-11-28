@@ -1,0 +1,14 @@
+# source bash files
+for file in ~/.{path,prompt,exports,aliases,functions,extra,private}; do
+    [ -r "$file" ] && source "$file"
+done
+unset file
+
+# travis gem setup
+[ -f ~/.travis/travis.sh ] && source ~/.travis/travis.sh
+
+# rbenv
+if [ -d "$HOME/.rbenv/bin" ] ; then
+  export PATH="$HOME/.rbenv/bin":$PATH
+  eval "$(rbenv init -)"
+fi
