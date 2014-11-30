@@ -8,7 +8,6 @@
 		".git",
 		"log",
 		"tmp",
-		"node_modules",
 		".bundle"
 	],
 	"font_face": "Source Code Pro",
