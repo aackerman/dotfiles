@@ -1,6 +1,7 @@
 export GOPATH="$HOME"
 export CDPATH=.:~:~/src
 export EDITOR='subl -w'
+export PATH="~/bin:$PATH"
 
 # Ruby GC Exports
 export RUBY_GC_MALLOC_LIMIT=64000000
