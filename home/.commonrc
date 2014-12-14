@@ -8,8 +8,7 @@ unset file
 [ -f ~/.travis/travis.sh ] && source ~/.travis/travis.sh
 
 # rbenv
-if [ -d "$HOME/.rbenv/bin" ] ; then
-  export PATH="$HOME/.rbenv/bin":$PATH
+if [ -d "$HOME/.rbenv" ] ; then
   eval "$(rbenv init -)"
 fi
 
