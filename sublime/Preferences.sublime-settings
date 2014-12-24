@@ -3,8 +3,7 @@
 	"color_scheme": "Packages/Color Scheme - Default/Solarized (Dark).tmTheme",
 	"detect_indentation": true,
 	"ensure_newline_at_eof_on_save": true,
-	"folder_exclude_patterns":
-	[
+	"folder_exclude_patterns": [
 		".git",
 		"log",
 		"tmp",
@@ -25,12 +24,12 @@
 	],
 	"line_padding_bottom": 1,
 	"line_padding_top": 1,
-	"open_files_in_new_window": false,
 	"match_brackets": true,
 	"match_brackets_angle": true,
 	"match_brackets_braces": true,
 	"match_brackets_content": true,
 	"match_brackets_square": true,
+	"open_files_in_new_window": false,
 	"soda_classic_tabs": true,
 	"tab_size": 2,
 	"theme": "Soda Dark.sublime-theme",
