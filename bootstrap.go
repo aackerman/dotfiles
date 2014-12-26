@@ -38,7 +38,7 @@ func fileExists(fname string) bool {
 	return false
 }
 
-func installFonts() {
+func InstallFonts() {
 	if isOSX() {
 		files, err := filepath.Glob("fonts/*.otf")
 		if err != nil {
@@ -84,13 +84,29 @@ func symlinkDotfiles() {
 	}
 }
 
-func installFonts() {
+func SymlinkItermPrefs() {
+	prefs := "Preferences.sublime-settings"
+	repofile := fmt.Sprintf("sublime/%s", prefs)
+	hostfile = "%s/Library/Application\ Support/Sublime\ Text\ 2/Packages/User/%s", os.Getenv("HOME"), prefs)
+	_ := os.Remove(hostfile)
+	if err := os.Symlink(repofile, hostfile); err != nil {
+		log.Fatalln(err)
+	}
+}
 
+func SymlinkSublimeSettings() {
+	prefs := "Preferences.sublime-settings"
+  repofile := fmt.Sprintf("sublime/%s", prefs)
+  homefile := fmt.Sprintf("%s/Library/Preferences/%s", os.Getenv("HOME"), prefs)
+  _ := os.Remove(homefile)
+  cp(repofile, homefile)
 }
 
 func main() {
 	symlinkDotfiles()
 	if isOSX() {
-		installFonts()
+		InstallFonts()
+		SymlinkSublimeSettings()
+		SymlinkItermPrefs()
 	}
 }
