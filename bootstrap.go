@@ -87,7 +87,7 @@ func symlinkDotfiles() {
 func SymlinkItermPrefs() {
 	prefs := "Preferences.sublime-settings"
 	repofile := fmt.Sprintf("sublime/%s", prefs)
-	hostfile = "%s/Library/Application\ Support/Sublime\ Text\ 2/Packages/User/%s", os.Getenv("HOME"), prefs)
+	hostfile := "%s/Library/Application\ Support/Sublime\ Text\ 2/Packages/User/%s", os.Getenv("HOME"), prefs)
 	_ := os.Remove(hostfile)
 	if err := os.Symlink(repofile, hostfile); err != nil {
 		log.Fatalln(err)
