@@ -1,6 +1,8 @@
 package main
 
 import (
+	"fmt"
+	"io"
 	"io/ioutil"
 	"log"
 	"os"
@@ -31,7 +33,7 @@ func cp(src, dst string) error {
 	return d.Close()
 }
 
-func fileExists(fname string) bool {
+func fileExists(filename string) bool {
 	if _, err := os.Stat(filename); err == nil {
 		return true
 	}
@@ -42,22 +44,22 @@ func InstallFonts() {
 	if isOSX() {
 		files, err := filepath.Glob("fonts/*.otf")
 		if err != nil {
-			fmt.Fatalln(err)
+			log.Fatalln(err)
 		}
 		if files == nil {
-			fmt.Fatalln("Unable to find fonts")
+			log.Fatalln("Unable to find fonts")
 		}
 		for _, f := range files {
-			err := cp(f, "/Library/" + f)
+			err := cp(f, "/Library/"+f)
 			if err != nil {
-				fmt.Fatalln(err)
+				log.Fatalln(err)
 			}
 		}
 	}
 }
 
-func symlinkDotfiles() {
-	osxfiles := []map[string]struct{}{
+func SymlinkDotfiles() {
+	osxfiles := map[string]struct{}{
 		".osx":     struct{}{},
 		"Brewfile": struct{}{},
 	}
@@ -68,12 +70,12 @@ func symlinkDotfiles() {
 	}
 
 	for _, fi := range dotfiles {
-		if v, ok := osxfiles[fi.Name()]; !ok {
-			repofile := filepath.Abs(fi.Name())
+		if _, ok := osxfiles[fi.Name()]; !ok {
+			repofile, _ := filepath.Abs(fi.Name())
 			homefile := filepath.Join(os.Getenv("HOME"), fi.Name())
 
 			// remove symlink
-			if err := os.Remove(abspath); err != nil {
+			if err := os.Remove(repofile); err != nil {
 				log.Fatalln(err)
 			}
 			// re-symlink
@@ -87,8 +89,10 @@ func symlinkDotfiles() {
 func SymlinkItermPrefs() {
 	prefs := "Preferences.sublime-settings"
 	repofile := fmt.Sprintf("sublime/%s", prefs)
-	hostfile := "%s/Library/Application\ Support/Sublime\ Text\ 2/Packages/User/%s", os.Getenv("HOME"), prefs)
-	_ := os.Remove(hostfile)
+	hostfile := fmt.Sprintf("%s/Library/Application Support/Sublime Text 2/Packages/User/%s", os.Getenv("HOME"), prefs)
+	if err := os.Remove(hostfile); err != nil {
+		log.Println(err)
+	}
 	if err := os.Symlink(repofile, hostfile); err != nil {
 		log.Fatalln(err)
 	}
@@ -96,14 +100,16 @@ func SymlinkItermPrefs() {
 
 func SymlinkSublimeSettings() {
 	prefs := "Preferences.sublime-settings"
-  repofile := fmt.Sprintf("sublime/%s", prefs)
-  homefile := fmt.Sprintf("%s/Library/Preferences/%s", os.Getenv("HOME"), prefs)
-  _ := os.Remove(homefile)
-  cp(repofile, homefile)
+	repofile := fmt.Sprintf("sublime/%s", prefs)
+	homefile := fmt.Sprintf("%s/Library/Preferences/%s", os.Getenv("HOME"), prefs)
+	if err := os.Remove(homefile); err != nil {
+		log.Println(err)
+	}
+	cp(repofile, homefile)
 }
 
 func main() {
-	symlinkDotfiles()
+	SymlinkDotfiles()
 	if isOSX() {
 		InstallFonts()
 		SymlinkSublimeSettings()
