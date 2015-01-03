@@ -30,6 +30,7 @@
   default = current
 [core]
   excludesfile = ~/.gitignore
+  pager = less -x2
 [user]
   name = Aaron Ackerman
   email = theron17@gmail.com
