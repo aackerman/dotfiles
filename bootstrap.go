@@ -105,7 +105,9 @@ func SymlinkSublimeSettings() {
 	if err := os.Remove(homefile); err != nil {
 		log.Println(err)
 	}
-	cp(repofile, homefile)
+	if err := cp(repofile, homefile); err != nil {
+		log.Println(err)
+	}
 }
 
 func main() {
