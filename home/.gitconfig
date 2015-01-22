@@ -13,6 +13,7 @@
   spuh = push
   puzh = push
   pul  = pull
+  count = rev-list HEAD --count
   sl = stash list
   sa = stash apply
   br = branch
