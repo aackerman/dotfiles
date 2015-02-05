@@ -37,11 +37,6 @@ prompt_git() {
 				s+='?';
 			fi;
 
-			# Check for stashed files.
-			if $(git rev-parse --verify refs/stash &>/dev/null); then
-				s+='$';
-			fi;
-
 		fi;
 
 		# Get the short symbolic ref.
