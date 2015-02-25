@@ -1,0 +1,28 @@
+{
+  "parser": "esprima",
+  "env": {
+    "browser": true,
+    "node": true
+  },
+  "ecmaFeatures": {
+    "arrowFunctions": true,
+    "blockBindings": true,
+    "defaultParams": true,
+    "destructuring": true,
+    "generators": true,
+    "objectLiteralComputedProperties": true,
+    "objectLiteralShorthandMethods": true,
+    "objectLiteralShorthandProperties": true,
+    "templateStrings": true,
+    "spread": true,
+    "jsx": true
+  },
+  "globals": {},
+  "plugins": [],
+  "rules": {
+    "valid-jsdoc": 1,
+    "no-cond-assign": 2,
+    "no-constant-condition": 2,
+    "no-dupe-keys": 2
+  }
+}
