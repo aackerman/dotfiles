@@ -23,6 +23,8 @@
     "valid-jsdoc": 1,
     "no-cond-assign": 2,
     "no-constant-condition": 2,
-    "no-dupe-keys": 2
+    "no-dupe-keys": 2,
+    "curly": 2,
+    "no-eval": 2
   }
 }
