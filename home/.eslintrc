@@ -25,6 +25,19 @@
     "no-constant-condition": 2,
     "no-dupe-keys": 2,
     "curly": 2,
-    "no-eval": 2
+    "no-eval": 2,
+    "new-parens": 2,
+    "no-new-object": 2,
+    "no-multiple-empty-lines": 2,
+    "no-lonely-if": 2,
+    "new-cap": 2,
+    "eol-last": 2,
+    "comma-style": [2, "last"],
+    "camelcase": 2,
+    "key-spacing": [2, {"beforeColon": false,"afterColon": true}],
+    "indent": [2, 2, {indentSwitchCase: false}],
+    "brace-style": [2, "1tbs", { "allowSingleLine": true }],
+    "comma-spacing": [2, {"before": false, "after": true}],
+    "consistent-this": [2, "self"]
   }
 }
