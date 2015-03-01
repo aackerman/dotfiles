@@ -1,5 +1,5 @@
 {
-  "parser": "esprima",
+  "parser": "babel-eslint",
   "env": {
     "browser": true,
     "node": true
@@ -20,6 +20,7 @@
   "globals": {},
   "plugins": [],
   "rules": {
+    "quotes": [2, "single", "avoid-escape"],
     "valid-jsdoc": 1,
     "no-cond-assign": 2,
     "no-constant-condition": 2,
