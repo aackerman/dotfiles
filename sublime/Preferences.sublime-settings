@@ -9,7 +9,8 @@
 		"log",
 		"tmp",
 		".bundle",
-		"node_modules"
+		"node_modules",
+		"bower_components"
 	],
 	"font_face": "Source Code Pro",
 	"font_size": 15.0,
