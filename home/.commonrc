@@ -4,9 +4,6 @@ for file in ~/.{path,prompt,exports,aliases,functions,extra,private}; do
 done
 unset file
 
-# travis gem setup
-[ -f ~/.travis/travis.sh ] && source ~/.travis/travis.sh
-
 # rbenv
 if [ -d "$HOME/.rbenv" ] ; then
   eval "$(rbenv init -)"
