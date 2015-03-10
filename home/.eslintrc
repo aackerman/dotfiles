@@ -15,7 +15,9 @@
     "objectLiteralShorthandProperties": true,
     "templateStrings": true,
     "spread": true,
-    "jsx": true
+    "jsx": true,
+    "modules": true,
+    "classes": true
   },
   "globals": {},
   "plugins": [],
