@@ -11,6 +11,7 @@
   phs  = push
   poush = push
   spuh = push
+  pusbh = push
   puzh = push
   pul  = pull
   count = rev-list HEAD --count
