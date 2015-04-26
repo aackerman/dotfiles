@@ -13,6 +13,7 @@
   spuh = push
   pusbh = push
   puzh = push
+  pu   = push
   pul  = pull
   count = rev-list HEAD --count
   sl = stash list
