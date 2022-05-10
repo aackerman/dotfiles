@@ -15,4 +15,5 @@ if [ -f /usr/local/etc/bash_completion.d/git-completion.bash ]; then
 fi
 
 # Fix BASH completion to work with 'g' alias
-complete -o bashdefault -o default -o nospace -F _git g 2>/dev/null || complete -o default -o nospace -F _git g
+# If this doesn't end up working with a newer install try `complete | grep git` to review the original git cli usage
+complete -o bashdefault -o default -o nospace -F __git_wrap__git_main g 2>/dev/null || complete -o default -o nospace -F __git_wrap__git_main g
